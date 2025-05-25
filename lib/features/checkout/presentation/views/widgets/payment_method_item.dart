@@ -30,7 +30,7 @@ class PaymentMethodItem extends StatelessWidget {
             blurRadius: 4,
             offset: const Offset(0, 0),
             spreadRadius: 0,
-          )
+          ),
         ],
       ),
       child: Container(
@@ -39,11 +39,7 @@ class PaymentMethodItem extends StatelessWidget {
           borderRadius: BorderRadius.circular(15),
         ),
         child: Center(
-          child: SvgPicture.asset(
-            image,
-            height: 24,
-            fit: BoxFit.scaleDown,
-          ),
+          child: SvgPicture.asset(image, height: 24, fit: BoxFit.scaleDown),
         ),
       ),
     );

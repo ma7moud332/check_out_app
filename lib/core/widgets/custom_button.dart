@@ -3,11 +3,7 @@ import 'package:flutter/widgets.dart';
 import '../utils/styles.dart';
 
 class CustomButton extends StatelessWidget {
-  const CustomButton({
-    super.key,
-    this.onTap,
-    required this.text,
-  });
+  const CustomButton({super.key, this.onTap, required this.text});
 
   final void Function()? onTap;
   final String text;
@@ -25,11 +21,7 @@ class CustomButton extends StatelessWidget {
           ),
         ),
         child: Center(
-          child: Text(
-            text,
-            textAlign: TextAlign.center,
-            style: Styles.style22,
-          ),
+          child: Text(text, textAlign: TextAlign.center, style: Styles.style22),
         ),
       ),
     );

@@ -6,9 +6,7 @@ import 'payment_item_info.dart';
 import 'total_price.dart';
 
 class ThankYouCard extends StatelessWidget {
-  const ThankYouCard({
-    super.key,
-  });
+  const ThankYouCard({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -16,9 +14,7 @@ class ThankYouCard extends StatelessWidget {
       width: double.infinity,
       decoration: ShapeDecoration(
         color: const Color(0xFFEDEDED),
-        shape: RoundedRectangleBorder(
-          borderRadius: BorderRadius.circular(20),
-        ),
+        shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(20)),
       ),
       child: Padding(
         padding: const EdgeInsets.only(top: 50 + 16, left: 22, right: 22),
@@ -29,9 +25,7 @@ class ThankYouCard extends StatelessWidget {
               textAlign: TextAlign.center,
               style: Styles.style25,
             ),
-            const SizedBox(
-              height: 2,
-            ),
+            const SizedBox(height: 2),
             Text(
               'Your transaction was successful',
               textAlign: TextAlign.center,
@@ -39,51 +33,22 @@ class ThankYouCard extends StatelessWidget {
                 color: Colors.black.withValues(alpha: 204),
               ),
             ),
-            const SizedBox(
-              height: 42,
-            ),
-            const PaymentItemInfo(
-              text: 'Date',
-              value: '01/24/2023',
-            ),
-            const SizedBox(
-              height: 20,
-            ),
-            const PaymentItemInfo(
-              text: 'Time',
-              value: '10:15 AM',
-            ),
-            const SizedBox(
-              height: 20,
-            ),
-            const PaymentItemInfo(
-              text: 'To',
-              value: 'Sam Louis',
-            ),
-            const Divider(
-              color: Color(0xFFC6C6C6),
-              thickness: 2,
-              height: 60,
-            ),
-            const TotalPrice(
-              title: 'Total',
-              value: '\$ 100.00',
-            ),
-            const SizedBox(
-              height: 30,
-            ),
+            const SizedBox(height: 42),
+            const PaymentItemInfo(text: 'Date', value: '01/24/2023'),
+            const SizedBox(height: 20),
+            const PaymentItemInfo(text: 'Time', value: '10:15 AM'),
+            const SizedBox(height: 20),
+            const PaymentItemInfo(text: 'To', value: 'Sam Louis'),
+            const Divider(color: Color(0xFFC6C6C6), thickness: 2, height: 60),
+            const TotalPrice(title: 'Total', value: '\$ 100.00'),
+            const SizedBox(height: 30),
             const CardInfoWidget(),
             const Spacer(),
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
-                const Icon(
-                  FontAwesomeIcons.barcode,
-                  size: 64,
-                ),
-                const SizedBox(
-                  width: 10,
-                ),
+                const Icon(FontAwesomeIcons.barcode, size: 64),
+                const SizedBox(width: 10),
                 Container(
                   width: 113,
                   height: 58,
@@ -105,12 +70,12 @@ class ThankYouCard extends StatelessWidget {
                       ),
                     ),
                   ),
-                )
+                ),
               ],
             ),
             SizedBox(
               height: ((MediaQuery.sizeOf(context).height * 0.2 + 20) / 2) - 29,
-            )
+            ),
           ],
         ),
       ),

@@ -11,15 +11,8 @@ class PaymentItemInfo extends StatelessWidget {
     return Row(
       mainAxisAlignment: MainAxisAlignment.spaceBetween,
       children: [
-        Text(
-          text,
-          textAlign: TextAlign.center,
-          style: Styles.style18,
-        ),
-        Text(
-          value,
-          style: Styles.styleBold18,
-        )
+        Text(text, textAlign: TextAlign.center, style: Styles.style18),
+        Text(value, style: Styles.styleBold18),
       ],
     );
   }

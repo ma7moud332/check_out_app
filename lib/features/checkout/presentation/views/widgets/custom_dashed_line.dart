@@ -1,9 +1,7 @@
 import 'package:flutter/material.dart';
 
 class CustomDashedLine extends StatelessWidget {
-  const CustomDashedLine({
-    super.key,
-  });
+  const CustomDashedLine({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -13,10 +11,7 @@ class CustomDashedLine extends StatelessWidget {
         (index) => Expanded(
           child: Padding(
             padding: const EdgeInsets.symmetric(horizontal: 2),
-            child: Container(
-              color: const Color(0xFFB7B7B7),
-              height: 2,
-            ),
+            child: Container(color: const Color(0xFFB7B7B7), height: 2),
           ),
         ),
       ),

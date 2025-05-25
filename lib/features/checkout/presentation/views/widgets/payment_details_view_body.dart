@@ -19,9 +19,7 @@ class _PaymentDetailsViewBodyState extends State<PaymentDetailsViewBody> {
   Widget build(BuildContext context) {
     return CustomScrollView(
       slivers: [
-        const SliverToBoxAdapter(
-          child: PaymentMethodsListView(),
-        ),
+        const SliverToBoxAdapter(child: PaymentMethodsListView()),
         SliverToBoxAdapter(
           child: CustomCreditCard(
             autovalidateMode: autovalidateMode,
@@ -54,7 +52,7 @@ class _PaymentDetailsViewBodyState extends State<PaymentDetailsViewBody> {
               ),
             ),
           ),
-        )
+        ),
       ],
     );
   }

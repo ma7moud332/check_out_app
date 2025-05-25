@@ -10,8 +10,6 @@ class CheckOutApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const MaterialApp(
-      home: MyCartView(),
-    );
+    return const MaterialApp(home: MyCartView());
   }
 }
