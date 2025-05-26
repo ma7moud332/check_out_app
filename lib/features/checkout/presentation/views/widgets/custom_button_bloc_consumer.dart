@@ -36,6 +36,7 @@ class CustomButtonBlocConsumer extends StatelessWidget {
                   amount:
                       '100', // Amount in cents (e.g., 1050 EGP = 105000 cents)
                   currency: 'USD',
+                  customerId: 'cus_SNsA0bmLFA6K3n',
                 );
             BlocProvider.of<PaymentCubit>(
               context,
