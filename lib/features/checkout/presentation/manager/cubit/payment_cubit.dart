@@ -11,7 +11,7 @@ part 'payment_state.dart';
 class PaymentCubit extends Cubit<PaymentState> {
   PaymentCubit(this.checkOutRepo) : super(PaymentInitial());
   final CheckOutRepo checkOutRepo;
-
+  int currentIndex = 0;
   Future makePayment({
     required PaymentIntentInputModel paymentIntentInputModel,
   }) async {

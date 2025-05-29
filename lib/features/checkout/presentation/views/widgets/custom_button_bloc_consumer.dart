@@ -12,6 +12,7 @@ import 'package:flutter_paypal_payment/flutter_paypal_payment.dart';
 
 import '../../../../../core/utils/api_keys.dart';
 import '../../../../../core/widgets/custom_button.dart';
+import '../../../data/models/payment_intent_input_model.dart';
 
 class CustomButtonBlocConsumer extends StatelessWidget {
   const CustomButtonBlocConsumer({super.key});
@@ -38,24 +39,30 @@ class CustomButtonBlocConsumer extends StatelessWidget {
       builder: (context, state) {
         return CustomButton(
           onTap: () {
-            // PaymentIntentInputModel paymentIntentInputModel =
-            //     PaymentIntentInputModel(
-            //       amount:
-            //           '100', // Amount in cents (e.g., 1050 EGP = 105000 cents)
-            //       currency: 'USD',
-            //       customerId: 'cus_SNsA0bmLFA6K3n',
-            //     );
-            // BlocProvider.of<PaymentCubit>(
-            //   context,
-            // ).makePayment(paymentIntentInputModel: paymentIntentInputModel);
-            var transactionsData = getTransctionsData();
-            executePaypalPayment(context, transactionsData);
+            if (BlocProvider.of<PaymentCubit>(context).currentIndex == 0) {
+              executeStripePayment(context);
+            } else if (BlocProvider.of<PaymentCubit>(context).currentIndex ==
+                1) {
+              var data = getTransctionsData();
+              executePaypalPayment(context, data);
+            }
           },
           isLoading: state is PaymentLoading ? true : false,
           text: 'Continue',
         );
       },
     );
+  }
+
+  void executeStripePayment(BuildContext context) {
+    PaymentIntentInputModel paymentIntentInputModel = PaymentIntentInputModel(
+      amount: '100', // Amount in cents (e.g., 1050 EGP = 105000 cents)
+      currency: 'USD',
+      customerId: 'cus_SNsA0bmLFA6K3n',
+    );
+    BlocProvider.of<PaymentCubit>(
+      context,
+    ).makePayment(paymentIntentInputModel: paymentIntentInputModel);
   }
 
   void executePaypalPayment(
